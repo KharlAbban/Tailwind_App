@@ -24,7 +24,7 @@ const DashboardPage = () => {
     }, [])
     
   return (
-    <div className="p-0 m-0 w-screen h-screen">
+    <div className="p-0 m-0 w-screen h-screen overflow-x-hidden">
       <Navbar toggleSidebar={toggleSidebar}/>
       <Sidebar sidebarVisibility={sidebarVisibility} />
       <SampleContent />

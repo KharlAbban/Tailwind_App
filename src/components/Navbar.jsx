@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import MenuToggleIcon from "../assets/media/menuToggleIcon.svg";
 import UserLogo from "../assets/media/fgblogo_icon-removebg-preview.png";
+import { MdLogout } from "react-icons/md";
+import { BsFiles } from "react-icons/bs";
+import { RiProfileLine } from "react-icons/ri";
+import SearchBar from './SearchBar';
 
 const Navbar = ({toggleSidebar}) => {
     const [displaySubMenu, setdisplaySubMenu] = useState(false);
 
   return (
     <nav id='dashboardNav' className='fixed top-0 z-50 w-full bg-deepBlue border-gray-300 border-b'>
-        <div className='p-3'>
+        <div className='py-2 px-3'>
             <div className='flex items-center justify-between py-1'>
                 {/* Toggle icon and logo */}
                 <div className='flex items-center justify-start'>
@@ -20,6 +24,9 @@ const Navbar = ({toggleSidebar}) => {
                     </span>
                 </div>
 
+                {/* Searchbar that shows on large screens */}
+                <SearchBar />
+
                 {/* Show Quick Menu */}
                 <div className='flex justify-center items-center'>
                 <div class="relative inline-block text-left">
@@ -30,11 +37,19 @@ const Navbar = ({toggleSidebar}) => {
                     </div>
                     <div class={`${displaySubMenu ? '' : 'hidden'} absolute right-0 z-10 mt-2 w-60 origin-top-right rounded-md bg-white shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none`}>
                         <div class="py-1" role="none">
-                        <a href="#" class="block px-4 py-1 text-lg font-semibold hover:bg-blue-100">Account settings</a>
-                        <a href="#" class="block px-4 py-1 text-lg font-semibold hover:bg-blue-100">Support</a>
-                        <a href="#" class="block px-4 py-1 text-lg font-semibold hover:bg-blue-100">License</a>
+                        <a href="#" class="flex justify-start items-center gap-3 px-4 py-1 text-lg font-semibold hover:bg-blue-100">
+                            <BsFiles />
+                            My Tickets
+                        </a>
+                        <a href="#" class="flex justify-start items-center gap-2 px-4 py-1 text-lg font-semibold hover:bg-blue-100">
+                            <RiProfileLine />
+                            My Profile
+                        </a>
                         <form>
-                            <button type="submit" class="text-red-600 block w-full px-4 py-2 text-left text-md hover:bg-red-100" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
+                            <button type="submit" class="flex gap-2 justify-start items-center text-red-600 w-full px-4 py-2 text-left text-md hover:bg-red-100" role="menuitem" tabindex="-1" id="menu-item-3">
+                                <MdLogout />
+                                Sign out
+                            </button>
                         </form>
                         </div>
                     </div>
