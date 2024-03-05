@@ -12,25 +12,25 @@ const Sidebar = ({sidebarVisibility}) => {
          <li>
             <a href="#" className="flex gap-2 w-full items-center p-2 text-white hover:bg-blue-900">
                <MdDashboard className="text-3xl ml-2 text-gray-300" />
-               <span className={`ms-3 lg:inline-block text-xl ${sidebarVisibility ? '' : 'hidden'}`}>Dashboard</span>
+               <span className={`ms-3 lg:inline-block text-lg ${sidebarVisibility ? '' : 'hidden'}`}>Dashboard</span>
             </a>
          </li>
          <li>
             <a href="#" className="flex gap-2 w-full items-center p-2 text-white hover:bg-blue-900">
                <FaFile className="text-3xl ml-2 text-gray-300" />
-               <span className={`ms-3 lg:inline-block text-xl ${sidebarVisibility ? '' : 'hidden'}`}>Tickets</span>
+               <span className={`ms-3 lg:inline-block text-lg ${sidebarVisibility ? '' : 'hidden'}`}>Tickets</span>
             </a>
          </li>
          <li>
             <a href="#" className="flex gap-2 w-full items-center p-2 text-white hover:bg-blue-900">
                <FaRegChartBar className="text-3xl ml-2 text-gray-300" />
-               <span className={`ms-3 lg:inline-block text-xl ${sidebarVisibility ? '' : 'hidden'}`}>Statistics</span>
+               <span className={`ms-3 lg:inline-block text-lg ${sidebarVisibility ? '' : 'hidden'}`}>Statistics</span>
             </a>
          </li>
          <li>
             <a href="#" className="flex gap-2 w-full items-center p-2 text-white hover:bg-blue-900">
                <IoSettings className="text-3xl ml-2 text-gray-300" />
-               <span className={`ms-3 lg:inline-block text-xl ${sidebarVisibility ? '' : 'hidden'}`}>Settings</span>
+               <span className={`ms-3 lg:inline-block text-lg ${sidebarVisibility ? '' : 'hidden'}`}>Settings</span>
             </a>
          </li>
       </ul>

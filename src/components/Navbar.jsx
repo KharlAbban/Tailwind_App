@@ -11,7 +11,7 @@ const Navbar = ({toggleSidebar}) => {
 
   return (
     <nav id='dashboardNav' className='fixed top-0 z-50 w-full bg-deepBlue border-gray-300 border-b'>
-        <div className='py-2 px-3'>
+        <div className='py-1 px-3'>
             <div className='flex items-center justify-between py-1'>
                 {/* Toggle icon and logo */}
                 <div className='flex items-center justify-start'>

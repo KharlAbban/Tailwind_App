@@ -1,6 +1,6 @@
 const Breadcrumb = () => {
   return (
-    <ol class="flex items-center whitespace-nowrap text-gray-500 font-semibold" aria-label="Breadcrumb">
+    <ol class="text-sm flex items-center whitespace-nowrap text-gray-500 font-semibold" aria-label="Breadcrumb">
         <li class="inline-flex items-center">
             <a class="flex items-center hover:text-blue-600 focus:outline-none focus:text-blue-600" href="#">
             Home
