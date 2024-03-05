@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         deepBlue: "#011936",
+      },
+      backgroundImage: {
+        indexBottomBgImg: "url('/assets/media/DASHBOARD.jpg')"
       }
     },
   },

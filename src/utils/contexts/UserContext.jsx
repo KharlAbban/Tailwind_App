@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+import { redirect } from "react-router-dom";
 
 // Create userContext
 export const UserContext = createContext(undefined);
@@ -9,7 +10,7 @@ export function useUserContext () {
 
     // If user is undefined, throw an error
     if (user === undefined) {
-        throw new Error("No UserContext defined!");
+        throw new Error("No UserContext defined");
     }
 
     return user;

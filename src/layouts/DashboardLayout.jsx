@@ -6,7 +6,7 @@ import { UserContext } from "../utils/contexts/UserContext";
 import Breadcrumb from "../components/Breadcrumb";
 
 const DashboardLayout = () => {
-    // Mmiscallenous actions
+    // Get user info from localStorage
     const userInfo = localStorage.getItem("userInfo") || "Staff";
 
     // States
@@ -30,6 +30,7 @@ const DashboardLayout = () => {
     
   return (
     <div className="p-0 m-0 w-screen h-screen overflow-x-hidden">
+        {/* Provide Context Here */}
         <UserContext.Provider value={userInfo}>
             <Navbar toggleSidebar={toggleSidebar}/>
             <Sidebar sidebarVisibility={sidebarVisibility} />
