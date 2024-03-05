@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'roobert';
+    src: url('./assets/fonts/RoobertRegular.ttf');
+}
+@font-face {
+    font-family: 'google-sans';
+    src: url('./assets/fonts/ProductSans-Regular.ttf');
+}
+@layer base {
+    html {
+        font-family: 'roobert', 'google-sans', sans-serif;
+    }
+}

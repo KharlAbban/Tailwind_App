@@ -1,5 +1,6 @@
 import React from 'react';
 import { Login } from '../components';
+import DashboardImg from "../assets/media/DASHBOARD.jpg"
 
 const IndexLayout = () => {
   return (
@@ -14,15 +15,17 @@ const IndexLayout = () => {
                 </h3>
                 <h3 className='text-xl font-bold italic'>Login to continue_</h3>
             </div>
-            <div className='w-1/2 pl-20 max-lg:w-full'>
+            <div className='w-1/2 px-20 max-lg:w-full'>
                 <Login />
             </div>
         </div>
 
-        <div className='h-1/4 flex p-0 max-sm:hidden'>
-            <div className="w-1/2 bg-blue-600 h-full">
+        <div className='h-1/4 flex p-0'>
+            <div className="w-1/2 relative bg-indexBottomBg h-full max-sm:w-full">
+                <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
+                <img src={DashboardImg} alt="dashboard image" />
             </div>
-            <div className='bg-white pl-4 pt-2'>
+            <div className='bg-white pl-4 pt-2 max-sm:hidden'>
                 <h2 className='font-bold text-3xl mb-3'>As simple as ABC</h2>
                 <p className='text-xl'>Sign Up</p>
                 <p className='text-xl'>Create or join a team</p>

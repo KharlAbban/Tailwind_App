@@ -9,8 +9,9 @@ export default {
       colors: {
         deepBlue: "#011936",
       },
-      backgroundImage: {
-        indexBottomBgImg: "url('/assets/media/DASHBOARD.jpg')"
+      fontFamily: {
+        'roobert': ["roobert", 'sans-serif'],
+        'google-sans': ["google-sans", 'sans-serif'],
       }
     },
   },
