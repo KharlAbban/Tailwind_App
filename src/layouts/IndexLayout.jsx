@@ -1,6 +1,6 @@
 import React from 'react';
-import { Login } from '../components';
 import DashboardImg from "../assets/media/DASHBOARD.jpg"
+import { Outlet } from 'react-router-dom';
 
 const IndexLayout = () => {
   return (
@@ -16,7 +16,7 @@ const IndexLayout = () => {
                 <h3 className='text-xl font-bold italic'>Login to continue_</h3>
             </div>
             <div className='w-1/2 px-20 max-lg:w-full'>
-                <Login />
+                <Outlet />
             </div>
         </div>
 
