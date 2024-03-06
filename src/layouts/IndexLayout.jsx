@@ -1,6 +1,6 @@
 import React from 'react';
 import DashboardImg from "../assets/media/DASHBOARD.jpg"
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const IndexLayout = () => {
   return (
@@ -14,6 +14,7 @@ const IndexLayout = () => {
                     Make trouble ticketing easy - because it is!
                 </h3>
                 <h3 className='text-xl font-bold italic'>Login to continue_</h3>
+                <h3 className='text-xl font-semibold'>Page bypass to home - <Link to="/home" className='text-blue-700'>Home Sneak Peek</Link> </h3>
             </div>
             <div className='w-1/2 px-20 max-lg:w-full'>
                 <Outlet />
