@@ -12,7 +12,7 @@ const Login = () => {
         LogIn
         <span className='lg:hidden'> to NOCTTApp</span>
       </h4>
-      <Form className='flex flex-col max-w-xl' method='post' encType='multipart/form-data'>
+      <Form className='flex flex-col max-w-xl' method='post'>
         <label className='text-lg' htmlFor="username">Username:</label>
         <input type="text" id="username" name='username' className="border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:bg-slate-50 block w-full ps-4 p-2" placeholder="Username here" required />
         {loginErrors?.userNameMsg && <p className='text-red-700'>{loginErrors.userNameMsg}</p>}
