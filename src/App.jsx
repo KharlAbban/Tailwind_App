@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { DashboardLayout, IndexLayout } from "./layouts";
 import { Dashboard, IndexErrorPage, Login, NewTicket, Register, ResetPassword, Tickets } from "./components";
 import { loginAction, registerAction } from "./utils/actions/indexActions";
+import { createNewTicketAction } from "./utils/actions/ticketActions";
 
 const nocRouter = createBrowserRouter([
   {
@@ -45,7 +46,8 @@ const nocRouter = createBrowserRouter([
       },
       {
         path: "/home/tickets/new",
-        element: <NewTicket />
+        element: <NewTicket />,
+        action: createNewTicketAction
       }
     ]
   }

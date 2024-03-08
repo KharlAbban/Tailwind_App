@@ -1,6 +1,7 @@
 import { redirect } from "react-router-dom";
-import {client} from "../../client";
 import bcrypt from "bcryptjs-react";
+import { v4 as uuidv4 } from "uuid";
+import {client} from "../../client";
 
 export async function registerAction({request}) {
     try {
@@ -12,7 +13,7 @@ export async function registerAction({request}) {
         const salt = await bcrypt.genSalt(12);
         const hashedPassword = await bcrypt.hash(formData.get("password"), salt);
         const doc = {
-            _id: user_name,
+            _id: uuidv4(),
             _type: "staff",
             email: user_email,
             userName: user_name,
@@ -57,14 +58,17 @@ export async function registerAction({request}) {
         const formData = await request.formData();
         const username = formData.get("username");
         const pwd = formData.get("password");
-        const userExists = await client.getDocument(username);
+
+        const query = `*[_type == "staff" && userName == '${username}']`;
+        const userExists = await client.fetch(query);
+        console.log(userExists);
 
         // Return error if user does not exist
-        if (userExists == null) return {userNameMsg: "No user account found with this name!"}
+        if (userExists.length < 1) return {userNameMsg: "No user account found with this name!"}
         // If user exists, check if usernames match
-        if (userExists.userName !== username) return {userNameMsg: "No user with this name exists!"}
+        if (userExists[0].userName !== username) return {userNameMsg: "No user with this name exists!"}
         // Also check if password matches
-        const passwordMatches = await bcrypt.compare(pwd, userExists.password);
+        const passwordMatches = await bcrypt.compare(pwd, userExists[0].password);
         if (!passwordMatches) {
             return {pwdMsg: "Incorrect password!"}
         } else {
