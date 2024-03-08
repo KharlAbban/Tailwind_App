@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { DashboardLayout, IndexLayout } from "./layouts";
-import { IndexErrorPage, Login, Register, ResetPassword } from "./components";
+import { Dashboard, IndexErrorPage, Login, NewTicket, Register, ResetPassword, Tickets } from "./components";
 import { loginAction, registerAction } from "./utils/actions/indexActions";
 
 const nocRouter = createBrowserRouter([
@@ -28,6 +28,26 @@ const nocRouter = createBrowserRouter([
   {
     path: "/home",
     element: <DashboardLayout />,
+    children:[
+      {
+        index: true,
+        element: <Dashboard />
+      }
+    ]
+  },
+  {
+    path: "/home/tickets",
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <Tickets />
+      },
+      {
+        path: "/home/tickets/new",
+        element: <NewTicket />
+      }
+    ]
   }
 ]);
 

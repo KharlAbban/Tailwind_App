@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import SampleContent from "../components/SampleContent";
 import { UserContext } from "../utils/contexts/UserContext";
 import Breadcrumb from "../components/Breadcrumb";
+import { Outlet } from "react-router-dom";
+import RouteHeading from "../components/RouteHeading";
 
 const DashboardLayout = () => {
     // Get user info from localStorage
@@ -38,8 +39,8 @@ const DashboardLayout = () => {
             <div className="p-1 border border-dashed border-gray-700 lg:ml-64 md:ml-16">
             <div className="px-2 mt-14">
                 <Breadcrumb />
-                <h1 className="font-bold leading-tight text-4xl mt-2">Ticket Dashboard</h1>
-                <SampleContent />
+                <RouteHeading />
+                <Outlet />
             </div>
             </div>
         </UserContext.Provider>
