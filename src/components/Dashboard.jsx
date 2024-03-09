@@ -4,13 +4,13 @@ import { FaCircle, FaRegCircleQuestion } from "react-icons/fa6";
 import { GoAlert } from "react-icons/go";
 
 const Dashboard = () => {
-    const user = useUserContext();
+    const {name} = useUserContext();
 
     return (
         <>
             <h2 className="flex justify-between font-semibold text-lg">
                 <span>
-                    Welcome back, {user}
+                    Welcome back, {name}
                 </span>
                 <span className="flex items-center max-md:hidden">
                     Monday - 2nd March, 2024

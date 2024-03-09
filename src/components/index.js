@@ -12,3 +12,4 @@ export {default as RouteHeading} from "./RouteHeading";
 
 // Error Pages
 export {default as IndexErrorPage} from "./errors/IndexErrorPage";
+export {default as HomeErrorPage} from "./errors/HomeErrorPage";

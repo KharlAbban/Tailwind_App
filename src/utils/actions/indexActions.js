@@ -72,7 +72,11 @@ export async function registerAction({request}) {
         if (!passwordMatches) {
             return {pwdMsg: "Incorrect password!"}
         } else {
-            localStorage.setItem("user", JSON.stringify(username));
+            const userInfo = {
+                name: userExists[0].userName,
+                id: userExists[0]._id,
+            }
+            localStorage.setItem("user", JSON.stringify(userInfo));
             return redirect("/home");
         }
     } catch (err) {

@@ -8,7 +8,7 @@ import RouteHeading from "../components/RouteHeading";
 
 const DashboardLayout = () => {
     // Get user info from localStorage
-    const userInfo = localStorage.getItem("userInfo") || "Staff";
+    const userInfo = JSON.parse(localStorage.getItem("user"));
 
     // States
     const [sidebarVisibility, setsidebarVisibility] = useState(false);

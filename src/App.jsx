@@ -1,8 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { DashboardLayout, IndexLayout } from "./layouts";
-import { Dashboard, IndexErrorPage, Login, NewTicket, Register, ResetPassword, Tickets } from "./components";
+import { Dashboard, HomeErrorPage, IndexErrorPage, Login, NewTicket, Register, ResetPassword, Tickets } from "./components";
 import { loginAction, registerAction } from "./utils/actions/indexActions";
 import { createNewTicketAction } from "./utils/actions/ticketActions";
+import dashboardLoader from "./utils/loaders/dashboardLoader";
 
 const nocRouter = createBrowserRouter([
   {
@@ -29,10 +30,12 @@ const nocRouter = createBrowserRouter([
   {
     path: "/home",
     element: <DashboardLayout />,
+    errorElement: <HomeErrorPage />,
     children:[
       {
         index: true,
-        element: <Dashboard />
+        element: <Dashboard />,
+        loader: dashboardLoader
       }
     ]
   },

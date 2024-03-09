@@ -9,10 +9,9 @@ export function useUserContext () {
     const user = useContext(UserContext);
 
     // If user is undefined, throw an error
-    if (user === undefined) {
-        throw new Error("No UserContext defined");
+    if (user === undefined || user === null) {
+        throw new Error("You need to login to continue");
     }
-
     return user;
 }
 
