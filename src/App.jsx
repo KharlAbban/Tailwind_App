@@ -4,6 +4,7 @@ import { Dashboard, HomeErrorPage, IndexErrorPage, Login, NewTicket, Register, R
 import { loginAction, registerAction } from "./utils/actions/indexActions";
 import { createNewTicketAction } from "./utils/actions/ticketActions";
 import dashboardLoader from "./utils/loaders/dashboardLoader";
+import { logoutAction } from "./utils/actions/homeActions";
 
 const nocRouter = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const nocRouter = createBrowserRouter([
         index: true,
         element: <Dashboard />,
         loader: dashboardLoader
+      },
+      {
+        path: "/home/logout",
+        action: logoutAction
       }
     ]
   },

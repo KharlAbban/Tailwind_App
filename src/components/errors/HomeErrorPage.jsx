@@ -8,7 +8,7 @@ const HomeErrorPage = () => {
     <div className="flex flex-col justify-center items-center w-screen h-screen">
       <GoAlert className="text-6xl text-red-800" />
       <p className="text-xl font-semibold">
-        {routeError.message}
+        {routeError.message || routeError}
       </p>
       {routeError.message.includes("You need to login to continue") ?
        <Link to="/" className="standard-btn mt-4">Login Here</Link>:

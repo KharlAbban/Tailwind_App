@@ -5,6 +5,7 @@ import { MdLogout } from "react-icons/md";
 import { BsFiles } from "react-icons/bs";
 import { RiProfileLine } from "react-icons/ri";
 import SearchBar from './SearchBar';
+import { Form } from 'react-router-dom';
 
 const Navbar = ({toggleSidebar}) => {
     const [displaySubMenu, setdisplaySubMenu] = useState(false);
@@ -45,12 +46,12 @@ const Navbar = ({toggleSidebar}) => {
                             <RiProfileLine />
                             My Profile
                         </a>
-                        <form>
+                        <Form method='post' action='/home/logout'>
                             <button type="submit" className="flex gap-2 justify-start items-center text-red-600 w-full px-4 py-2 text-left text-md hover:bg-red-100" role="menuitem">
                                 <MdLogout />
                                 Sign out
                             </button>
-                        </form>
+                        </Form>
                         </div>
                     </div>
                 </div>
